@@ -1,0 +1,19 @@
+.transaction {
+  width: 500px;
+  text-align: center;
+  margin: 0 auto;
+  background-color: rgb(192, 209, 192);
+  margin-bottom: 20px;
+}
+
+.transaction th {
+  background-color: rgb(56, 155, 106);
+  height: 35px;
+  color: white;
+  border: 1px solid rgb(22, 21, 21);
+}
+.transaction td {
+  border: 1px solid rgb(22, 21, 21);
+  height: 35px;
+  color: rgb(110, 108, 108);
+}
