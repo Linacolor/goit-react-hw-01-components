@@ -5,6 +5,7 @@ import Friends from './components/Friends/Friends';
 import Statistics from './components/Statistics/Statistics';
 import Transactions from './components/Transactions/Transactions';
 import user from './dataJson/user.json';
+import data from './dataJson/data.json';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         stats={user.stats}
       />
       <Friends />
-      <Statistics />
+      <Statistics title="Upload stats" stats={data} />
       <Transactions />
     </div>
   );
