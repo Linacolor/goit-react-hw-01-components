@@ -1,34 +1,42 @@
 import s from './Profile.module.css';
+import PropTypes from 'prop-types';
 
-function Profile() {
+function Profile({ username, tag, location, avatar, stats = {} }) {
   return (
     <div class={s.profile}>
       <div class={s.description}>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"
-          alt="User avatar"
-          class={s.avatar}
-        />
-        <p class={s.name}>Petra Marica</p>
-        <p class={s.tag}>@pmarica</p>
-        <p class={s.location}>Salvador, Brasil</p>
+        <img src={avatar} alt="User avatar" class={s.avatar} />
+        <p class={s.name}>{username}</p>
+        <p class={s.tag}>{tag}</p>
+        <p class={s.location}>{location}</p>
       </div>
 
       <ul class={s.stats}>
         <li>
           <span class={s.label}>Followers</span>
-          <span class={s.quantity}>1000</span>
+          <span class={s.quantity}>{stats.followers}</span>
         </li>
         <li>
           <span class={s.label}>Views</span>
-          <span class={s.quantity}>2000</span>
+          <span class={s.quantity}>{stats.views}</span>
         </li>
         <li>
           <span class={s.label}>Likes</span>
-          <span class={s.quantity}>3000</span>
+          <span class={s.quantity}>{stats.likes}</span>
         </li>
       </ul>
     </div>
   );
 }
+Profile.propTypes = {
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  stats: PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+  }),
+};
 export default Profile;
