@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import './App.css';
 import Profile from './components/Profile/Profile';
 import Friends from './components/Friends/FriendList';
