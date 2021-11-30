@@ -5,7 +5,7 @@ import StatisticsList from './StatisticsList';
 function Statistics({ title, stats }) {
   return (
     <section class={s.statistics}>
-      <h2 class={s.title}>{title}</h2>
+      {title && <h2 className={s.title}>{title}</h2>}
 
       <ul class={s.list}>
         <StatisticsList item={stats} />
